@@ -10,7 +10,7 @@ service Greeter {
   rpc SayHello (HelloRequest) returns (HelloReply) {}
 
   // 获取test的计数值
-  rpc GetTestNum (HelloRequest) returns (TestNumReply) {}
+  rpc GetTestNum (HelloRequest) returns (HelloReply) {}
 
 }
 
@@ -27,5 +27,5 @@ message HelloReply {
 }
 
 message TestNumReply {
-    string  result = 1;
+    int32  test = 1;
 }

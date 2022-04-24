@@ -27,5 +27,5 @@ message HelloReply {
 }
 
 message TestNumReply {
-    string  result = 1;
+    int32  test = 1;
 }

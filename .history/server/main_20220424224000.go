@@ -2,7 +2,7 @@
  * @Author: zhounanjun
  * @Date: 2022-04-24 13:04:34
  * @LastEditors: zhounanjun
- * @LastEditTime: 2022-04-24 22:41:51
+ * @LastEditTime: 2022-04-24 22:39:54
  * @Description: 请填写简介
  */
 
@@ -18,7 +18,9 @@ import (
 	pb "helloworld/proto"
 
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/reflection"
+	"google.golang.org/grpc/status"
 )
 
 var (
@@ -37,8 +39,7 @@ func (s *server) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloRe
 }
 
 func (s *server) GetTestNum(ctx context.Context, in *pb.HelloRequest) (*pb.TestNumReply, error) {
-	log.Printf("Received: %v", in.GetTest())
-	return &pb.TestNumReply{Result: fmt.Sprintf("Test add 1 is :  %d", in.GetTest()+1)}, nil
+	return nil, status.Errorf(codes.Unimplemented, "method GetTestNum not implemented")
 }
 
 func main() {

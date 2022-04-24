@@ -38,7 +38,7 @@ func (s *server) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloRe
 
 func (s *server) GetTestNum(ctx context.Context, in *pb.HelloRequest) (*pb.TestNumReply, error) {
 	log.Printf("Received: %v", in.GetTest())
-	return &pb.TestNumReply{Result: fmt.Sprintf("Test add 1 is :  %d", in.GetTest()+1)}, nil
+	return &pb.TestNumReply{Test: fmt.Sprintf("Test add 1 is :  %d", in.GetTest()+1)}, nil
 }
 
 func main() {

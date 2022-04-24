@@ -10,7 +10,7 @@ service Greeter {
   rpc SayHello (HelloRequest) returns (HelloReply) {}
 
   // 获取test的计数值
-  rpc GetTestNum (HelloRequest) returns (TestNumReply) {}
+  rpc GetTestNum (HelloRequest) returns (HelloReply) {}
 
 }
 
@@ -24,8 +24,5 @@ message HelloRequest {
 // The response message containing the greetings
 message HelloReply {
   string message = 1;
-}
-
-message TestNumReply {
-    string  result = 1;
+  bool likeCoding = 2;
 }
